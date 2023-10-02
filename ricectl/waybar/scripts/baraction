@@ -1,5 +1,5 @@
 #!/bin/sh
-. ~/.config/HyprV/hyprv.conf
+. ~/.config/hypr/ricectl/hyprv.conf
 
 #Check the version 
 VER=$(readlink -f ~/.config/waybar/config.jsonc | cut -d '-' -f1 | cut -d '/' -f8)
@@ -19,19 +19,19 @@ fi
 notify-send -h string:x-canonical-private-synchronous:sys-notify -u low "switching to $MODESTR"
 
 #set the waybar theme
-ln -sf ~/.config/HyprV/waybar/style/$VER'-style'$SWITCHTO.css ~/.config/waybar/style.css
+ln -sf ~/.config/hypr/ricectl/waybar/style/$VER'-style'$SWITCHTO.css ~/.config/waybar/style.css
 
 #set the wofi theme
-ln -sf ~/.config/HyprV/wofi/style/$VER'-style'$SWITCHTO.css ~/.config/wofi/style.css
+ln -sf ~/.config/hypr/ricectl/wofi/style/$VER'-style'$SWITCHTO.css ~/.config/wofi/style.css
 
 #set the mako theme
-ln -sf ~/.config/HyprV/mako/conf/config$SWITCHTO ~/.config/mako/config
+ln -sf ~/.config/hypr/ricectl/mako/conf/config$SWITCHTO ~/.config/mako/config
 
 #set the measuring unit
 if [[ $SET_MESU == "I" ]]; then
-    ln -sf ~/.config/HyprV/waybar/conf/mesu-imp.jsonc ~/.config/HyprV/waybar/conf/mesu.jsonc
+    ln -sf ~/.config/hypr/ricectl/waybar/conf/mesu-imp.jsonc ~/.config/hypr/ricectl/waybar/conf/mesu.jsonc
 elif [[ $SET_MESU == "M" ]]; then
-    ln -sf ~/.config/HyprV/waybar/conf/mesu-met.jsonc ~/.config/HyprV/waybar/conf/mesu.jsonc
+    ln -sf ~/.config/hypr/ricectl/waybar/conf/mesu-met.jsonc ~/.config/hypr/ricectl/waybar/conf/mesu.jsonc
 fi
 
 #set the xfce and GTK theme
@@ -49,13 +49,13 @@ gsettings set org.gnome.desktop.interface gtk-theme "Adwaita$SWITCHTO"
 
 #change the background image and be cool about it ;)
 if [ -z $SET_BG ]; then
-    swww img ~/.config/HyprV/backgrounds/$VER'-background'$SWITCHTO.jpg --transition-fps 60 --transition-type wipe --transition-duration 2
+    swww img ~/.config/hypr/ricectl/backgrounds/$VER'-background'$SWITCHTO.jpg --transition-fps 60 --transition-type wipe --transition-duration 2
 else
     swww img $SET_BG --transition-fps 60 --transition-type wipe --transition-duration 2
 fi
 
 #update the sddm image
-cp -f ~/.config/HyprV/backgrounds/$VER'-background'$SWITCHTO.jpg /usr/share/sddm/themes/sdt/wallpaper.jpg
+cp -f ~/.config/hypr/ricectl/backgrounds/$VER'-background'$SWITCHTO.jpg /usr/share/sddm/themes/sdt/wallpaper.jpg
 
 #reset mako
 sleep 1
@@ -68,5 +68,5 @@ pkill waybar
 waybar &
 
 if [[ $VER == "v4" ]]; then
-    waybar --config ~/.config/HyprV/waybar/conf/v4-config-bottom.jsonc
+    waybar --config ~/.config/hypr/ricectl/waybar/conf/v4-config-bottom.jsonc
 fi

@@ -31,9 +31,9 @@
     ],
     
     "include": [
-        "~/.config/HyprV/waybar/conf/mesu.jsonc",
-        "~/.config/HyprV/waybar/conf/asus-rog.jsonc",
-        "~/.config/HyprV/waybar/conf/hyprv-util.jsonc"
+        "~/.config/hypr/ricectl/waybar/conf/mesu.jsonc",
+        "~/.config/hypr/ricectl/waybar/conf/asus-rog.jsonc",
+        "~/.config/hypr/ricectl/waybar/conf/hyprv-util.jsonc"
     ],
 
     "idle_inhibitor": {
@@ -49,7 +49,7 @@
         "interval": 30,
         "format": " {}",
         "keyboard-name": "logitech-pro-gaming-keyboard",
-        "on-click": "~/.config/HyprV/hyprv_util swkb",
+        "on-click": "~/.config/hypr/ricectl/hyprv_util swkb",
         "signal": 8
     },
 
@@ -109,10 +109,10 @@
     "pulseaudio": {
         "format": "{icon}",
         "format-muted": "",
-        "on-click": "~/.config/HyprV/waybar/scripts/volume --toggle",
+        "on-click": "~/.config/hypr/ricectl/waybar/scripts/volume --toggle",
         "on-click-right": "pavucontrol",
-        "on-scroll-up": "~/.config/HyprV/waybar/scripts/volume --inc",
-        "on-scroll-down": "~/.config/HyprV/waybar/scripts/volume --dec",
+        "on-scroll-up": "~/.config/hypr/ricectl/waybar/scripts/volume --inc",
+        "on-scroll-down": "~/.config/hypr/ricectl/waybar/scripts/volume --dec",
         "scroll-step": 5,
         "format-icons": {
             "headphone": "",
@@ -131,10 +131,10 @@
         "format": "{format_source}",
         "format-source": "",
         "format-source-muted": "",
-        "on-click": "~/.config/HyprV/waybar/scripts/volume --toggle-mic",
+        "on-click": "~/.config/hypr/ricectl/waybar/scripts/volume --toggle-mic",
         "on-click-right": "pavucontrol",
-        "on-scroll-up": "~/.config/HyprV/waybar/scripts/volume --mic-inc",
-        "on-scroll-down": "~/.config/HyprV/waybar/scripts/volume --mic-dec",
+        "on-scroll-up": "~/.config/hypr/ricectl/waybar/scripts/volume --mic-inc",
+        "on-scroll-down": "~/.config/hypr/ricectl/waybar/scripts/volume --mic-dec",
         "scroll-step": 5,
         "tooltip": true,
         "tooltip-format": " at {volume}%"
@@ -146,8 +146,8 @@
         "format-alt-click": "click-right",
         "format-alt": "{icon} {percent}%",
         "format-icons": ["󰃞", "󰃟", "󰃠"],
-        "on-scroll-up": "~/.config/HyprV/waybar/scripts/brightness --inc",
-        "on-scroll-down": "~/.config/HyprV/waybar/scripts/brightness --dec"
+        "on-scroll-up": "~/.config/hypr/ricectl/waybar/scripts/brightness --inc",
+        "on-scroll-down": "~/.config/hypr/ricectl/waybar/scripts/brightness --dec"
     },
 
     "tray": {
@@ -157,8 +157,8 @@
 
     "custom/updates": {
         "format": "{}",
-        "exec": "~/.config/HyprV/waybar/scripts/update-sys",
-        "on-click": "~/.config/HyprV/waybar/scripts/update-sys update",
+        "exec": "~/.config/hypr/ricectl/waybar/scripts/update-sys",
+        "on-click": "~/.config/hypr/ricectl/waybar/scripts/update-sys update",
         "interval": 300,
         "tooltip": true
     }

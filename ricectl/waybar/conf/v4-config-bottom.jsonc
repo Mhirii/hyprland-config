@@ -17,7 +17,7 @@
     "modules-right": ["custom/weather"],
 
     "include": [
-        "~/.config/HyprV/waybar/conf/mesu.jsonc"
+        "~/.config/hypr/ricectl/waybar/conf/mesu.jsonc"
     ],
 
     "custom/launch_firefox": {
@@ -46,7 +46,7 @@
     
     "custom/launch_wofi": {
         "format": "󱗼",
-        "on-click": "sh -c '(sleep 0.5s; pkill wofi || wofi -c ~/.config/HyprV/wofi/config-lmenu)' & disown",
+        "on-click": "sh -c '(sleep 0.5s; pkill wofi || wofi -c ~/.config/hypr/ricectl/wofi/config-lmenu)' & disown",
         "tooltip": false
     },
 

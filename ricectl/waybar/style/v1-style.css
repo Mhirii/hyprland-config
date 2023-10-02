@@ -1,3 +1,13 @@
+
+@import "theme.css";
+/* @import "colors.css"; */
+
+@define-color border-color alpha(mix(@color8, @foreground, 0.3), 0.5);
+@define-color center @foreground;
+@define-color accent @color4;
+@define-color background1 mix(@background, @color0, 0.5);
+@define-color background2 mix(@background, @color0, 0.75);
+
 * {
     border: none;
     border-radius: 0;
@@ -5,15 +15,34 @@
     font-weight: bold;
     font-size: 16px;
     min-height: 0;
+    border-color: @border-color; 
 }
 
 window#waybar {
-    background: rgba(21, 18, 27, 0);
-    color: #2b2b2c;
+    background: alpha(@background, 0.5);
+    color: @foreground;
 }
 
+.modules-left{
+  /* background: alpha(@background1, 0.9); */
+  border-color: @border-color;
+  border-radius: 6px;
+  padding: 2px;
+  margin: 2px 8px;
+}
+
+
+.modules-right{
+  /* background: alpha(@background, 0.9); */
+  border-color: @border-color;
+  border-radius: 6px;
+  padding: 4px;
+  margin: 2px 8px;
+}
+
+
 tooltip {
-    background: #e7e7ec;
+    background: @background;
     opacity: 0.8;
     border-radius: 10px;
     border-width: 2px;
@@ -22,138 +51,180 @@ tooltip {
 }
 
 tooltip label{
-    color: #2b2b2c;
+    color: @foreground; 
+}
+
+#workspaces {
+    background-color: alpha(@color0, 0.5);
+    opacity: 1;
+    margin: 4px 0px;
+    /* border: 1px solid; */
+    border-color: @border-color; 
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-left: 0px;
+    border-radius: 8px;
 }
 
 #workspaces button {
-    padding: 5px;
-    color: #313244;
-    margin-right: 5px;
+    padding: 0px 4px;
+    margin: 2px 0px;
+    color: alpha(mix(@background, @foreground, 0.7),0.3);
+    margin-left: 0px;
+    transition: padding 0.2s;
+    transition-timing-function: ease-out;
+    border-radius: 8px;
 }
 
+
 #workspaces button.active {
-    color: #a6adc8;
+    color: @foreground;
+    background-color: @accent;
+    margin: 2px 0px;
+    padding-left: 16px;
+    padding-right: 16px;
+    transition: padding 0.2s, background-color 0.3s, border-color 0.3s;
+    transition-timing-function: ease-out;
+    border-radius: 8px;
 }
 
 #workspaces button.focused {
-    color: #a6adc8;
-    background: #eba0ac;
-    border-radius: 10px;
+    color: @color6;
+    background-color: alpha(@color0, 0.9);
 }
 
 #workspaces button.urgent {
-    color: #11111b;
-    background: #a6e3a1;
-    border-radius: 10px;
+    color: #aa2e2e;
+    background: @background;
 }
 
 #workspaces button:hover {
-    background: #11111b;
-    color: #cdd6f4;
-    border-radius: 10px;
+    background: mix(@accent, @color0, 0.75);
+    color: @foreground;
+    
 }
 
+#custom-launch_wofi,
+#custom-lock_screen,
+#custom-light_dark,
+#custom-power_btn,
 #custom-power_profile,
 #custom-weather,
 #custom-myhyprv,
-#custom-light_dark,
 #window,
+#cpu,
+#disk,
+#custom-updates,
+#memory,
 #clock,
 #battery,
 #pulseaudio,
 #network,
-#bluetooth,
-#temperature,
-#workspaces,
 #tray,
+#temperature,
 #backlight {
-    background: #e7e7ec;
-    opacity: 0.8;
-    padding: 0px 10px;
-    margin: 3px 0px;
-    margin-top: 10px;
-    border: 0px;
+    background: alpha(@background, 0);
+    opacity: 1;
+    padding: 0px 8px;
 }
 
-/* close to left */
-#temperature, #backlight, #custom-myhyprv {
-    border-radius: 10px 0px 0px 10px;
+#temperature, #cpu, #memory{
+  background-color: alpha(@color0, 0.5);
+  /* border-top: 1px solid; */
+  /* border-bottom: 1px solid; */
+  border-color: @border-color;
 }
 
-/*close to the right */
-#bluetooth, #custom-light_dark {
-    border-radius: 0px 10px 10px 0px;
-    margin-right: 10px
+#temperature{
+  color: @accent;
+  /* border-left: 1px solid; */
+  border-color: @border-color;
+  border-radius: 4px 0px 0px 4px;
 }
-#temperature.critical {
-    color: #e92d4d;
-}
-
-#tray {
-    border-radius: 10px;
-    margin-right: 10px;
+#temperature.critical{
+  color: @color1;
 }
 
-#workspaces {
-    border-radius: 10px;
-    margin-left: 10px;
-    padding-right: 0px;
-    padding-left: 5px;
+#cpu{
+  color: @accent;
 }
 
-#custom-power_profile {
-    color: #1d7715;
-    border-left: 0px;
-    border-right: 0px;
-}
-
-#window {
-    border-radius: 10px;
-    margin-left: 60px;
-    margin-right: 60px;
-}
-
-#clock {
-    color: #f17d35;
-    border-radius: 10px 0px 0px 10px;
-    margin-left: 10px;
-    border-right: 0px;
-}
-
-#network {
-    color: #f17d35;
-    border-radius: 10px 0px 0px 10px;
-    border-left: 0px;
-    border-right: 0px;
-}
-
-#bluetooth {
-    color: #407cdd;
-} 
-
-#pulseaudio {
-    color: #407cdd;
-    border-left: 0px;
-    border-right: 0px;
-}
-
-#pulseaudio.microphone {
-    color: #ad6bfd;
-    border-left: 0px;
-    border-right: 0px;
-    border-radius: 0px 10px 10px 0px;
-    margin-right: 10px;
+#memory{
+  color: @accent;
+  /* border-right: 1px solid; */
+  border-color: @border-color;
+  border-radius:  0px 4px 4px 0px;
 }
 
 #battery {
-    color: #1d7715;
-    border-radius: 0 10px 10px 0;
-    margin-right: 10px;
-    border-left: 0px;
+  color: @color2;
+  background-color: alpha(@color0, 0.5);
+  /* border: 1px solid; */
+  margin-left: 4px;
+  border-color: @border-color;
+  border-radius: 4px;
+}
+#battery.warning{
+  color: @color3;
+}
+#battery.critical{
+  color: @color1;
 }
 
-#custom-weather {
-    border-radius: 0px 10px 10px 0px;
-    border-right: 0px;
-    margin-left: 0px;
+#backlight, #pulseaudio, #pulseaudio.microphone{
+  background-color: alpha(@color0, 0.5);
+  border-color: @border-color;
+}
+
+#backlight{
+  color: @color4;
+  border-radius: 4px;
+  padding: 0px;
+  margin-right: 4px;
+}
+
+#pulseaudio{
+  color: @accent;
+  border-color: @border-color;
+  padding: 0px 6px;
+  border-radius: 4px 0px 0px 4px;
+}
+
+#pulseaudio.microphone{
+  color: @accent;
+  border-radius: 0px 4px 4px 0px;
+}
+
+#tray{
+  color: @center;
+  margin-left: 4px;
+  background-color: alpha(@color0, 0.5);
+  border-color: @border-color;
+  border-radius: 4px;
+}
+
+#custom-lock_screen, #clock, #custom-power_btn{
+  background-color: alpha(@color0, 0.5);
+  border-color: @border-color;
+}
+
+#custom-lock_screen{
+  color: @center;
+  margin-left: 4px;
+  border-radius: 4px 0px 0px 4px;
+}
+
+#custom-power_btn{
+  color: @center;
+  padding-right: 10px;
+  border-radius: 0px 4px 4px 0px;
+}
+
+
+#custom-updates{
+  /* border: 1px solid; */
+  margin-right: 4px;
+  background-color: alpha(@color0, 0.5);
+  border-color: @border-color;
+  border-radius: 4px;
 }
