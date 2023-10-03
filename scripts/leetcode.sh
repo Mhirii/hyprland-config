@@ -25,4 +25,5 @@ elif [ "$domain" = "leetcode.com" ]; then
     createWorkspace $folder $problem
 else
     echo "wtf"
+    notify-send -t 1200 "Invalid link"
 fi
