@@ -113,7 +113,7 @@ switch_version() {
     fi
 
     #update the sddm image
-    cp -f ~/.config/hypr/ricectl/backgrounds/$VERTO'background'$SWITCHTO.jpg /usr/share/sddm/themes/sdt/wallpaper.jpg
+    # cp -f ~/.config/hypr/ricectl/backgrounds/$VERTO'background'$SWITCHTO.jpg /usr/share/sddm/themes/sdt/wallpaper.jpg
 
 }
 
