@@ -14,14 +14,15 @@
     "custom/memory_icon",
     "memory",
     "custom/cpu_icon",
-    "cpu"
+    "cpu",
+    "custom/updates",
+    "hyprland/submap"
     // "custom/launch_wofi",
   ],
-  "modules-center": ["hyprland/workspaces", "hyprland/submap"],
+  "modules-center": ["hyprland/workspaces"],
   "modules-right": [
-    "custom/updates",
-    "battery",
     "backlight",
+    "battery",
     "pulseaudio",
     "pulseaudio#microphone",
     "custom/myhyprv",
@@ -119,17 +120,28 @@
     "min-length": 6
   },
 
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "on-scroll-up": "~/.config/hypr/ricectl/waybar/scripts/brightness --inc",
+    "on-scroll-down": "~/.config/hypr/ricectl/waybar/scripts/brightness --dec",
+    "min-length": 6
+  },
+
   "battery": {
     "states": {
       "good": 95,
-      "warning": 30,
-      "critical": 20
+      "warning": 40,
+      "critical": 25
     },
-    "format": "{icon} {capacity}%",
+    "format": "{icon} {capacity}% {time}",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
-    "format-alt": "{time} {icon}",
-    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    "format-alt": "{icon} {capacity}%",
+    "format-time": "{H}:{m}",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "on-click-right": "auto-cpufreq-gtk"
   },
 
   "pulseaudio": {

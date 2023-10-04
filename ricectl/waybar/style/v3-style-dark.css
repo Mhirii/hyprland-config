@@ -217,6 +217,34 @@ tooltip label {
   color: #e92d4d;
 }
 
+#battery {
+  color: @accent;
+  padding: 4px;
+  margin-left: 2px;
+  margin-right: 2px;
+  border-color: @accent;
+  border-bottom: 2px solid;
+  border-radius: 0px;
+}
+#battery.warning {
+  color: @color3;
+  border-color: @color3;
+}
+#battery.critical {
+  color: @color1;
+  border-color: @color1;
+}
+
+#backlight{
+  color: @accent;
+  padding: 0px;
+  margin-left: 2px;
+  margin-right: 2px;
+  border-color: @accent;
+  border-bottom: 2px solid;
+  border-radius: 0px;
+}
+
 #submap {
   margin-left: 4px;
   padding: 0px 4px;
