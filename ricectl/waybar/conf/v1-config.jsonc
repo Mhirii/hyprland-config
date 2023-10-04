@@ -221,5 +221,14 @@
     "on-scroll-up": "~/.config/hypr/ricectl/waybar/scripts/volume --mic-inc",
     "on-scroll-down": "~/.config/hypr/ricectl/waybar/scripts/volume --mic-dec",
     "scroll-step": 5
+  },
+  "temperature": {
+    "thermal-zone": 1,
+    "format": "",
+    "format-alt-click": "click-right",
+    "format-alt": " {temperatureC}°C",
+    "critical-threshold": 70,
+    "format-critical": " {temperatureC}°C",
+    "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
   }
 }

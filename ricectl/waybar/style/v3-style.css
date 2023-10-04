@@ -8,12 +8,12 @@
 }
 
 window#waybar {
-    background: #e7e7ec;
+    background: rgba(21, 18, 27, 0);
     color: #2b2b2c;
 }
 
 tooltip {
-    background: #e7e7ec;
+    background: #e7e7ec;;
     opacity: 0.8;
     border-radius: 10px;
     border-width: 2px;
@@ -75,16 +75,17 @@ tooltip label{
 #backlight {
     background: #e7e7ec;
     opacity: 0.8;
-    padding: 0px 8px;
-    margin: 0px 3px;
+    padding: 0px 10px;
+    margin: 3px 0px;
+    margin-top: 10px;
     border: 0px;
 }
 
-#custom-launch_wofi, #cpu {
+#tray, #custom-lock_screen, #temperature, #backlight, #custom-launch_wofi, #cpu {
     border-radius: 10px 0px 0px 10px;
 }
 
-#custom-light_dark{
+#custom-light_dark, #custom-power_btn, #workspaces, #pulseaudio.microphone, #battery, #disk{
     border-radius: 0px 10px 10px 0px;
     margin-right: 10px;
 }
@@ -99,7 +100,7 @@ tooltip label{
     padding-left: 5px;
 }
 
-#custom-power_profile, #battery, #temperature {
+#custom-power_profile {
     color: #1d7715;
     border-left: 0px;
     border-right: 0px;
@@ -127,4 +128,9 @@ tooltip label{
     color: #ad6bfd;
     border-left: 0px;
     border-right: 0px;
+}
+
+#battery {
+    color: #1d7715;
+    border-left: 0px;
 }

@@ -1,0 +1,21 @@
+{
+  "custom/cpu_icon": {
+    "format": "",
+    "tooltip": false
+  },
+
+  "custom/disk_icon": {
+    "format": "󰋊",
+    "tooltip": false
+  },
+
+  "custom/memory_icon": {
+    "format": "",
+    "tooltip": false
+  },
+
+  "custom/temperature_icon": {
+    "format": "",
+    "tooltip": false
+  }
+}
