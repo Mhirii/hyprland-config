@@ -153,6 +153,8 @@ tooltip label {
 #tray {
 }
 
+#custom-updates_icon,
+#custom-rice_icon,
 #custom-cpu_icon,
 #custom-disk_icon,
 #custom-temperature_icon,
@@ -187,17 +189,18 @@ tooltip label {
   margin-right: 2px;
 }
 
-#custom-disk_icon {
+#custom-rice_icon {
   padding: 0px 11px 0px 8px;
   /* background: @color2; */
 }
-#disk {
+
+#custom-myhyprv {
   border: 2px solid;
-  border-radius: 2px 0px 0px 2px;
-  /* border-color: @color2; */
+  border-radius: 0px 2px 2px 0px;
+  /* border-color: @color3; */
   border-color: @accent;
-  margin-left: 2px;
-  margin-right: 0px;
+  margin-left: 0px;
+  margin-right: 2px;
 }
 
 #custom-temperature_icon {
@@ -217,14 +220,26 @@ tooltip label {
   color: #e92d4d;
 }
 
+#custom-updates_icon {
+}
+
+#custom-updates {
+  border: 2px solid;
+  border-radius: 0px 2px 2px 0px;
+  /* border-color: @color6; */
+  border-color: @accent;
+  margin-left: 0px;
+  margin-right: 2px;
+}
+
 #battery {
   color: @accent;
   padding: 4px;
   margin-left: 2px;
   margin-right: 2px;
-  border-color: @accent;
-  border-bottom: 2px solid;
-  border-radius: 0px;
+  /* border-color: @accent; */
+  /* border-bottom: 2px solid; */
+  /* border-radius: 0px; */
 }
 #battery.warning {
   color: @color3;
@@ -235,14 +250,14 @@ tooltip label {
   border-color: @color1;
 }
 
-#backlight{
+#backlight {
   color: @accent;
   padding: 0px;
   margin-left: 2px;
   margin-right: 2px;
-  border-color: @accent;
-  border-bottom: 2px solid;
-  border-radius: 0px;
+  /* border-color: @accent; */
+  /* border-bottom: 2px solid; */
+  /* border-radius: 0px; */
 }
 
 #submap {

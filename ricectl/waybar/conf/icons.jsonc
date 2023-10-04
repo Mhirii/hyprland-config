@@ -17,5 +17,18 @@
   "custom/temperature_icon": {
     "format": "",
     "tooltip": false
+  },
+
+  "custom/updates_icon": {
+    "format": "",
+    "tooltip": false,
+    "exec": "~/.config/hypr/ricectl/waybar/scripts/update-sys",
+    "on-click": "~/.config/hypr/ricectl/waybar/scripts/update-sys update",
+    "interval": 300
+  },
+
+  "custom/rice_icon": {
+    "format": "󱁼",
+    "tooltip": false
   }
 }
