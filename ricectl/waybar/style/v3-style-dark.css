@@ -137,12 +137,16 @@ tooltip label {
   color: @accent;
   border-left: 0px;
   border-right: 0px;
+  padding: 0px 4px;
+  margin: 0px 2px;
 }
 
 #pulseaudio.microphone {
   color: @accent;
   border-left: 0px;
   border-right: 0px;
+  padding: 0px 4px;
+  margin: 0px 2px;
 }
 
 #battery {
