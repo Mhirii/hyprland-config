@@ -12,7 +12,11 @@ createWorkspace (){
   mkdir "$folder/$problem"
   cd "$folder/$problem"
   touch main.go
-  neovide main.go
+  go mod init leet/$problem
+  # neovide main.go
+  # code   
+  code --password-store="gnome" $(pwd)
+  # kitty . & disown
 }
 
 if [ "$domain" = "csacademy.com" ]; then
