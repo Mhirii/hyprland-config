@@ -11,12 +11,19 @@ createWorkspace (){
   echo will create $problem at $folder
   mkdir "$folder/$problem"
   cd "$folder/$problem"
+  mkdir go
+  cd go
   touch main.go
   go mod init leet/$problem
+  cd ..
+  mkdir cpp
+  touch cpp/main.cpp
+  mkdir py
+  touch py/main.py
   # neovide main.go
   # code   
-  code --password-store="gnome" $(pwd)
-  # kitty . & disown
+  # code --password-store="gnome" $(pwd)
+  kitty . & disown
 }
 
 if [ "$domain" = "csacademy.com" ]; then
