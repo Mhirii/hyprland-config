@@ -18,12 +18,12 @@
         "hyprland/workspaces"
     ],
     "modules-right": [
-        "group/hardware",
+        // "group/hardware",
         "battery",
         "backlight",
-        // "temperature",
-        // "cpu",
-        // "memory",
+        "temperature",
+        "cpu",
+        "memory",
         // "custom/myhyprv",
         "tray",
         "clock"
@@ -118,10 +118,6 @@
             "4": [],
             "5": [],
             "6": [],
-            "7": [],
-            "8": [],
-            "9": [],
-            "10": []
         }
     },
 
@@ -186,7 +182,7 @@
 
     "wlr/taskbar": {
         "format": "{icon}",
-        "icon-size": 12,
+        "icon-size": 10,
         "all-outputs": true,
         "tooltip-format": "{name} - {title}",
         "on-click": "activate",

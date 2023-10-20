@@ -5,28 +5,27 @@
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
-    "height": 30,
+    "height": 20,
     "modules-left": [
-        // "custom/launch_wofi",
-        "group/tasks",
-        // "wlr/taskbar",
+        // "group/tasks",
+        "custom/launch_wofi",
+        "hyprland/workspaces",
         "pulseaudio",
         "pulseaudio#microphone",
         "hyprland/submap"
     ],
     "modules-center": [
-        "hyprland/workspaces"
+        "clock"
     ],
     "modules-right": [
-        "group/hardware",
+        // "group/hardware",
+        "memory",
+        "cpu",
+        "temperature",
         "battery",
-        "backlight",
-        // "temperature",
-        // "cpu",
-        // "memory",
-        // "custom/myhyprv",
+        "custom/myhyprv",
         "tray",
-        "clock"
+        "custom/power"
     ],
 
     "include": [
@@ -34,6 +33,11 @@
         "~/.config/hypr/ricectl/waybar/conf/asus-rog.jsonc",
         "~/.config/hypr/ricectl/waybar/conf/hyprv-util.jsonc"
     ],
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "{: %A, %e %B %Y}"
+    },
 
     "group/hardware": {
       "orientation": "inherit",
@@ -106,34 +110,31 @@
         "disable-scroll": true,
         "all-outputs": true,
         "on-click": "activate",
-        "format": "{icon} {windows}",
+        "format": "{icon}",
         "format-icons": {
-          "1": "1",
-          "2": "2",
-          "3": "3",
-          "4": "4",
-          "5": "5",
-          "6": "6",
-          // "active": "",
+          "active": "",
           "default": ""
         },
-       "window-rewrite-default": "",
+       "window-rewrite-default": " ",
         "window-rewrite": {
-          "firefox": " ",
-          "kitty": " ",
-          "code": "󰨞 ",
+          "firefox": "",
+          "kitty": "",
+          "code": "󰨞",
+          "postman": "",
+          "obsidian": "󰠮",
+          "webstorm": "󰛦",
+          "goland": "",
+          "GitHub Desktop": "",
+          "GitKraken": "",
+      "bitwarden":"󰞀",
         },
         "persistent_workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": [],
-            "9": [],
-            "10": []
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": [],
         }
     },
 
