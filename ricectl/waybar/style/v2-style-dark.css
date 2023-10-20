@@ -2,8 +2,8 @@
 
 @define-color border-color alpha(mix(@background, @foreground, 0.7), 0.5);
 @define-color accent @color4;
-@define-color background-transparent alpha(@background, 0.2);
-@define-color bg1 alpha(@background, 0.5);
+@define-color background-transparent alpha(@background, 0);
+@define-color bg1 alpha(@background, 0.8);
 
 
 * {
@@ -45,27 +45,33 @@ tooltip label{
 }
 
 #workspaces button {
-    color: @foreground;
+    color: @accent;
     padding: 2px 2px;
-    border-radius: 4px;
+    background-color: transparent;
+    /* border-radius: 4px; */
     margin: 0px 1px;
+    border: 0px;
 }
 
 #workspaces button.persistent {
-    color: @color8;
+  color: @accent;
 }
 
 #workspaces button.active {
-    color: @foreground; 
+    color: @accent; 
     /* background-color: @accent; */
     /* border-radius: 8px; */
     /* padding: 0px 8px; */
 
 }
 
+#workspaces button.empty {
+    color: @color8;
+}
+
 #workspaces button.visible {
     color: @color4;
-  }
+}
 
 
 #workspaces button.urgent {
@@ -73,7 +79,6 @@ tooltip label{
 }
 
 #workspaces button:hover {
-    background: @color8;
     color: @foreground;
 }
 
@@ -106,86 +111,98 @@ tooltip label{
 
 #clock{
   background-color: @color0;
+  color: @accent;
   opacity: 1;
   font-size: 16px;
   padding: 0px 16px;
+  margin-left: 2px;
   border-radius: 0px 0px 0px 16px;
 }
 
-#custom-launch_wofi{
+#tasks{
   background-color: @color0;
+  color: @accent;
+  opacity: 1;
+  font-size: 16px;
+  border-radius: 0px 0px 16px 0px;
+  margin-right: 2px;
+}
+
+#custom-launch_wofi{
+  /* background-color: @color0; */
+  color: @accent;
   opacity: 1;
   font-size: 16px;
   padding: 0px 16px;
   padding-right: 24px;
-  border-radius: 0px 0px 16px 0px;
-  margin-right: 2px;
+  /* border-radius: 0px 0px 16px 0px; */
+  /* margin-right: 2px; */
 }
 
 
 #tray{
     background-color: @bg1;
     border-radius: 8px;
-      margin: 4px;
+    margin: 4px 2px;
 }
 
-#memory, #cpu, #temperature{
-  background-color: @bg1;
-  border-radius: 0px;
-  margin: 4px 0px;
+#hardware{
+    background-color: @bg1;
+    border-radius: 8px;
+    margin: 4px 2px;
 }
 
-#memory{
-    margin-right: 4px;
-    border-radius: 0px 8px 8px 0px;
-}
-#temperature{
-    border-radius: 8px 0px 0px 8px;
-    margin-left: 2px;
-}
 
 #pulseaudio{
   background-color: @bg1;
   border-radius: 8px 0px 0px 8px;
   margin: 4px 0px;
+  margin-left: 2px;
 }
 
 #pulseaudio.microphone{
   background-color: @bg1;
   border-radius: 0px 8px 8px 0px;
   margin: 4px 0px;
-  margin-right: 4px;
-  border-left: 1px solid @border-color;
+  margin-right: 2px;
 }
 
 #custom-myhyprv{
   background-color: @bg1;
-  margin: 4px 0px;
+  margin: 4px 2px;
   border-radius: 8px;  
 }
 
 #taskbar{
-  background-color: @bg1;
   margin: 4px;
-  border-radius: 8px;
 }
 
 #taskbar button{
     margin: 4px 2px;
     padding: 2px 1px;
+  padding-left: 4px;
+  border-bottom: 2px solid transparent;
 }
 #taskbar button.active{
-  background-color: @accent;
-  border-radius: 4px;
-  padding: 2px 4px;
-  padding-left: 8px;
+  background-color: transparent;
+  border-bottom: 2px solid @accent;
 }
 
 
 #battery {
-  color: @accent;
-  padding: 0px 2px;
-  margin: 4px;
+  background-color: @bg1;
+  border-radius: 8px 0px 0px 8px;
+  color: @foreground;
+  padding: 0px 4px;
+  margin: 4px 0px;
+  margin-left: 2px;
+}
+#backlight {
+  background-color: @bg1;
+  border-radius: 0px 8px 8px 0px;
+  padding: 0px 4px;
+  margin: 4px 0px;
+  margin-right: 2px;
 }
 
 #battery.warning {
@@ -195,4 +212,3 @@ tooltip label{
 #battery.critical {
   color: @color1;
 }
-
