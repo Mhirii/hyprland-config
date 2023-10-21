@@ -38,7 +38,7 @@ tooltip label{
 
 #workspaces {
   /* background-color: @color0; */
-  background: rgba(0,0,0,0);
+  background: transparent;
   border-radius: 0px 0px 8px 8px;
   padding: 4px 8px;
   margin: 0px;
@@ -48,10 +48,12 @@ tooltip label{
   background: rgba(0,0,0,0);
     color: @accent;
     padding: 2px 2px;
+    padding-left: 1px;
+    padding-right: 5px;
     background-color: transparent;
-    /* border-radius: 4px; */
-    margin: 0px 1px;
-    border: 0px;
+    margin: 0px;
+    border: none;
+    border-radius: 32px;
 }
 
 #workspaces button.persistent {
@@ -86,6 +88,7 @@ tooltip label{
 #custom-weather,
 #custom-myhyprv,
 #taskbar,
+#submap,
 #window,
 #cpu,
 #disk,
@@ -190,11 +193,13 @@ tooltip label{
   padding: 0px 4px;
   margin: 4px 0px;
   margin-left: 2px;
+  padding-left: 8px;
 }
 #backlight {
   background-color: @bg1;
   border-radius: 0px 8px 8px 0px;
   padding: 0px 4px;
+  padding-right: 4px;
   margin: 4px 0px;
   margin-right: 2px;
 }
@@ -206,3 +211,42 @@ tooltip label{
 #battery.critical {
   color: @color1;
 }
+
+#cpu, #memory, #temperature{
+  background-color: @bg1;
+  margin: 4px 0px;
+  padding: 0px 4px;
+}
+#memory{
+    border-radius: 0px 8px 8px 0px;
+    margin-right: 2px;
+    padding-right: 8px;
+}
+#temperature{
+  border-radius: 8px 0px 0px 8px;
+    margin-left: 2px;
+    padding-left: 8px;
+}
+
+#submap{
+  padding: 0px 8px;
+  color: @accent;
+  background-color: @bg1;
+  border-radius: 8px;
+  margin: 4px 2px;
+}
+
+#window{
+    font-size: 9pt;
+    color: @foreground;
+    margin: 4px 2px;
+    padding: 0px 8px;
+    /* background-color: @bg1; */
+    /* border-radius: 8px; */
+  }
+#window.empty{
+    padding: 0px;
+    margin: 0px;
+    background: @color4;
+  }
+
