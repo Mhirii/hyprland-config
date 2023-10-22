@@ -14,7 +14,7 @@ createWorkspace (){
   mkdir go
   cd go
   touch main.go
-  go mod init leet/$problem
+  go mod init leet/"$problem"
   cd ..
   mkdir cpp
   touch cpp/main.cpp
