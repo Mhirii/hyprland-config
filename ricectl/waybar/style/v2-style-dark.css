@@ -46,7 +46,7 @@ tooltip label{
 
 #workspaces button {
   background: rgba(0,0,0,0);
-    color: @accent;
+    color: @foreground;
     padding: 2px 2px;
     padding-left: 1px;
     padding-right: 5px;
