@@ -6,6 +6,15 @@
 @define-color bg1 alpha(@background, 0.8);
 
 
+@keyframes movingGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
 * {
     border: none;
     margin:0;
@@ -18,7 +27,8 @@
 }
 
 window#waybar {
-    background: @background-transparent; 
+    /* background: @background-transparent;  */
+    background: rgba(0,0,0,0); 
     color: @foreground;
 }
 
@@ -35,54 +45,69 @@ tooltip label{
     color: #cdd6f4;
 }
 
+.modules-center{
 
-#workspaces {
-  border-radius: 0px 0px 8px 8px;
-  padding: 4px 8px;
+  background-color: @color0;
+  /* background: transparent; */
+  border-radius: 0px 0px 10px 10px;
+  padding: 0px 4px 4px 4px;
   margin: 0px;
 }
-#workspaces *{
-        font-size: 16px;
 
-  }
+#workspaces {
+    background: @color0;
+    /* border-radius: 0px 0px 8px 8px; */
+    padding: 4px;
+}
 
 #workspaces button {
-    background: transparent;
-    color: @foreground;
+    color: transparent;
+    background: @color8;
     padding: 0px 2px;
-    margin: 0px 1px;
-    border: 0px solid;
-    border-top: 0px;
+    margin: 0px 2px;
+    border: none;
+    border-radius: 64px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out, padding 0.2s ease;
 }
+  #workspaces button *{
+        font-size: 8pt;
+  }
 
 #workspaces button.persistent {
-    background: transparent;
-    color: alpha( @foreground, 0.7 );
+  color: mix(@foreground, @color8, 0.5 );
+  background: @color8;
 }
 
-#workspaces button.active {
-    background: transparent;
-    color: alpha( @foreground, 1 );
-}
 
 #workspaces button.empty {
-    background: transparent;
-    color: alpha( @bg1, 0.7 );
+    color: @background;
+    background: @background;
 }
 
 #workspaces button.visible {
-    background: transparent;
-    color: @color4;
+    background: linear-gradient(45deg , mix(@color6, @color8, 0.7), mix(@accent, @color8, 0.2));
+    color: @color0;
+    /* color: @foreground; */
 }
 
+#workspaces button.active {
+    color: @color0; 
+    background: linear-gradient(60deg , @accent, @color6, @accent);
+    background-size: 600% 300%;
+    animation: movingGradient 5s linear infinite; 
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: background 0.4s ease-in-out, color 0.5s ease-in-out, padding 0.2s ease;
+}
 
 #workspaces button.urgent {
-    background: transparent;
-    color: @color1;
+    color: @color0;
+    background: @color1;
 }
 
 #workspaces button:hover {
-    background: transparent;
+    color: @foreground;
+    background: @color8;
 }
 
 #custom-launch_wofi,
@@ -93,6 +118,7 @@ tooltip label{
 #custom-weather,
 #custom-myhyprv,
 #taskbar,
+#submap,
 #window,
 #cpu,
 #disk,
@@ -113,11 +139,12 @@ tooltip label{
 }
 
 #clock{
-  color: @foreground;
+  background-color: @color0;
+  color: @accent;
   opacity: 1;
-  /* font-size: 16px; */
   padding: 0px 16px;
-  margin: 0px;
+  margin-left: 2px;
+  border-radius: 0px 0px 0px 16px;
 }
 
 #tasks{
@@ -141,6 +168,7 @@ tooltip label{
 
 
 #tray{
+    background-color: @bg1;
     border-radius: 8px;
     margin: 4px 2px;
 }
@@ -153,20 +181,22 @@ tooltip label{
 
 
 #pulseaudio{
+  background-color: @bg1;
   border-radius: 8px 0px 0px 8px;
   margin: 4px 0px;
   margin-left: 2px;
 }
 
 #pulseaudio.microphone{
+  background-color: @bg1;
   border-radius: 0px 8px 8px 0px;
   margin: 4px 0px;
   margin-right: 2px;
 }
 
 #custom-myhyprv{
-  padding: 0px;
-  margin: 4px 0px;
+  background-color: @bg1;
+  margin: 4px 2px;
   border-radius: 8px;  
 }
 
@@ -187,13 +217,19 @@ tooltip label{
 
 
 #battery {
+  background-color: @bg1;
+  border-radius: 8px 0px 0px 8px;
   color: @foreground;
   padding: 0px 4px;
   margin: 4px 0px;
   margin-left: 2px;
+  padding-left: 8px;
 }
 #backlight {
+  background-color: @bg1;
+  border-radius: 0px 8px 8px 0px;
   padding: 0px 4px;
+  padding-right: 4px;
   margin: 4px 0px;
   margin-right: 2px;
 }
@@ -205,3 +241,42 @@ tooltip label{
 #battery.critical {
   color: @color1;
 }
+
+#cpu, #memory, #temperature{
+  background-color: @bg1;
+  margin: 4px 0px;
+  padding: 0px 4px;
+}
+#memory{
+    border-radius: 0px 8px 8px 0px;
+    margin-right: 2px;
+    padding-right: 8px;
+}
+#temperature{
+  border-radius: 8px 0px 0px 8px;
+    margin-left: 2px;
+    padding-left: 8px;
+}
+
+#submap{
+  padding: 0px 8px;
+  color: @accent;
+  background-color: @bg1;
+  border-radius: 8px;
+  margin: 4px 2px;
+}
+
+#window{
+    font-size: 9pt;
+    color: @foreground;
+    margin: 4px 2px;
+    padding: 0px 8px;
+    /* background-color: @bg1; */
+    /* border-radius: 8px; */
+  }
+#window.empty{
+    padding: 0px;
+    margin: 0px;
+    background: @color4;
+  }
+
