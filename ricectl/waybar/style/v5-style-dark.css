@@ -48,26 +48,30 @@ tooltip label{
 .modules-center{
 
   background-color: @color0;
-  /* background: transparent; */
+  background: transparent;
   border-radius: 0px 0px 10px 10px;
   padding: 0px 4px 4px 4px;
   margin: 0px;
 }
 
 #workspaces {
-    background: @color0;
+    background: @bg1;
+      border-radius: 8px;
+  /* background: transparent; */
     /* border-radius: 0px 0px 8px 8px; */
+    margin-top: 4px;
     padding: 4px;
 }
 
 #workspaces button {
     color: transparent;
     background: @color8;
-    padding: 0px 2px;
+    padding: 0px 1px;
+    padding-top: 1px;
     margin: 0px 2px;
     border: none;
     border-radius: 64px;
-    transition: background 0.3s ease-in-out, color 0.3s ease-in-out, padding 0.2s ease;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out, padding 0.2s ease-out;
 }
   #workspaces button *{
         font-size: 8pt;
@@ -95,9 +99,9 @@ tooltip label{
     background: linear-gradient(60deg , @accent, @color6, @accent);
     background-size: 600% 300%;
     animation: movingGradient 5s linear infinite; 
-    padding-left: 10px;
-    padding-right: 10px;
-    transition: background 0.4s ease-in-out, color 0.5s ease-in-out, padding 0.2s ease;
+    padding-left: 8px;
+    padding-right: 8px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out, padding 0.2s ease-out;
 }
 
 #workspaces button.urgent {
