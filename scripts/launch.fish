@@ -34,17 +34,43 @@ switch $arg
     else
       firefox
     end
-      
+
   case "code"
     code --password-store="gnome" \
       --ozone-platform=wayland \
       --enable-features=UseOzonePlatform,WaylandWindowDecorations,WebRTCPipeWireCapturer
+
+  case "rofi"
+    rofi -show drun
+
   case "terminal"
     kitty
+
+  case "neovim"
+      kitty --detach --hold -e nvim
   case "neovide"
-    neovide
+      neovide --multigrid
+
+  case "lunarvim"
+      kitty --detach --hold -e lvim
+  case "lunarvide"
+      neovide --neovim-bin ~/.local/bin/lvim --multigrid
+
   case "graphicalFiles"
     nemo
+
   case "files"
     kitty --detach -e "ranger"
+
+  case "clipboard"
+    cliphist list | rofi -dmenu | cliphist decode | wl-copy
+
+  case "spotify"
+    spotify
+
+  case "spt"
+    spotifyd
+    kitty --detach -e "spt"
+    kitty --detach -e "cava"
+
 end
