@@ -46,6 +46,9 @@ switch $arg
   case "terminal"
     kitty
 
+  case "tmux"
+    kitty --detach -T tmux -e ~/.config/hypr/scripts/tmux_session.fish
+
   case "neovim"
       kitty --detach --hold -e nvim
   case "neovide"
