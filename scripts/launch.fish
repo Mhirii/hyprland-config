@@ -47,7 +47,12 @@ switch $arg
         kitty
 
     case zellij
-        zellij -s Main -l example
+        if test ( zellij ls | rg main )
+            kitty -e --detach --hold zellij a main
+        else
+            kitty -e --detach --hold zellij -s main -l main
+        end
+        # kitty -e --detach --hold zellij $command
     case tmux
         kitty --detach -T tmux -e ~/.config/hypr/scripts/tmux_session.fish
 
