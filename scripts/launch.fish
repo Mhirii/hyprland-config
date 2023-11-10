@@ -44,7 +44,13 @@ switch $arg
         rofi -show drun
 
     case terminal
+        alacritty
+
+    case terminal1
         kitty
+
+    case terminal2
+        alacritty
 
     case zellij
         if test ( zellij ls | rg main )
