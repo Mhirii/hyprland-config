@@ -29,10 +29,10 @@ end
 
 switch $arg
     case browser
-        if isRunning firefox
-            hyprctl dispatch workspace (getWorkspaceId "firefox")
+        if isRunning firedragon
+            hyprctl dispatch workspace (getWorkspaceId "firedragon")
         else
-            firefox
+            firedragon
         end
 
     case code
@@ -43,12 +43,8 @@ switch $arg
     case rofi
         rofi -show drun
 
-    case terminal
-        alacritty
-
     case terminal1
         kitty
-
     case terminal2
         alacritty
 

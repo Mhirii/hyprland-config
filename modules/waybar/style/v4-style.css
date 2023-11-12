@@ -1,0 +1,164 @@
+@import "theme.css";
+
+@define-color accent @color4;
+@define-color background-transparent alpha(@background, 0);
+@define-color bg1 alpha(@background, 0.8);
+
+/* -----------------------------------------------------------------------------
+ * Base styles
+ * -------------------------------------------------------------------------- */
+
+/* Reset all styles */
+
+* {
+  color: @foreground;
+  border: 0;
+  border-radius: 0;
+  padding: 0 0;
+  font-family: Monaspace Neon;
+  font-size: 14px;
+  margin-right: 2px;
+  margin-left: 2px;
+  padding-bottom: 0px;
+}
+
+window#waybar {
+  background: @bg1;
+  border-radius: 0px;
+}
+
+#workspaces button {
+  padding: 0px 8px;
+  border-bottom: 2px;
+  color: @foreground;
+  border-color: @color8;
+  border-style: solid;
+  /* margin-top: 2px; */
+}
+
+#workspaces button.urgent {
+  border-color: @accent;
+  background: @color1;
+}
+
+#workspaces button.active {
+  border-color: @accent;
+  background: @color8;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#idle_inhibitor,
+#temperature,
+#custom-keyboard-layout,
+#backlight,
+#network,
+#pulseaudio,
+#tray,
+#window,
+#custom-launcher,
+#custom-power,
+#custom-pacman,
+#custom-network_traffic,
+#custom-weather {
+  padding: 0 4px;
+  margin: 0px 4px;
+  /* border-bottom: 2px; */
+  border-style: solid;
+}
+
+/* -----------------------------------------------------------------------------
+ * Module styles
+ * -------------------------------------------------------------------------- */
+
+#clock {
+  color: @foreground;
+}
+
+#backlight {
+  color: @foreground;
+}
+
+#battery {
+  color: @foreground;
+}
+
+#battery.charging {
+  color: @color2;
+}
+
+@keyframes blink {
+  to {
+    color: @color8;
+    background-color: @foreground;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background: @color1;
+  color: @foreground;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#cpu {
+  color: @foreground;
+}
+
+#memory {
+  color: @foreground;
+}
+
+#network.disabled {
+  color: @color1;
+}
+
+#network {
+  color: @foreground;
+}
+
+#network.disconnected {
+  color: @color1;
+}
+
+#pulseaudio {
+  color: @foreground;
+}
+
+#pulseaudio.muted {
+  color: @color8;
+}
+
+#temperature {
+  color: @foreground;
+}
+
+#temperature.critical {
+  color: @color1;
+}
+
+#idle_inhibitor {
+  color: @foreground;
+}
+
+#tray {
+}
+
+#custom-launcher,
+#custom-power {
+  border-style: hidden;
+  margin-top: 2px;
+}
+
+#window {
+  border-style: hidden;
+  margin-top: 1px;
+}
+#custom-network_traffic {
+  color: @foreground;
+}
