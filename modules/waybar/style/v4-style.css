@@ -23,7 +23,7 @@
 }
 
 window#waybar {
-  background: @bg1;
+  background: @color0;
   border-radius: 0px;
 }
 
@@ -75,6 +75,10 @@ window#waybar {
 
 #clock {
   color: @foreground;
+  background-color: @background;
+  border-radius: 4px;
+  margin: 2px;
+  padding: 0px 8px;
 }
 
 #backlight {
@@ -147,12 +151,23 @@ window#waybar {
 }
 
 #tray {
+  background-color: @background;
+  margin: 2px;
+  border-radius: 4px;
 }
 
-#custom-launcher,
+#custom-launcher {
+  border-style: hidden;
+}
 #custom-power {
+  background-color: @background;
+  border-radius: 4px;
+  margin: 2px;
+  padding-right: 10px;
+  padding-left: 8px;
   border-style: hidden;
   margin-top: 2px;
+  color: @color1;
 }
 
 #window {

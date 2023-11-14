@@ -15,15 +15,14 @@
   "modules-right": [
     "custom/hyprv",
     "custom/pacman",
-    "custom/network_traffic",
     "backlight",
     "temperature",
     "cpu",
     "memory",
     "battery",
     "pulseaudio",
-    "tray",
     "idle_inhibitor",
+    "tray",
     "clock",
     "custom/power"
   ],
