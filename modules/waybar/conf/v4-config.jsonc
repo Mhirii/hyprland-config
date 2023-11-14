@@ -3,7 +3,7 @@
   "position": "top", // Waybar position (top|bottom|left|right)
   "height": 30,
   //"width":1900,
-  "margin": "0 0 0 0",
+  "margin": "4 4 4 4",
   "spacing": 0,
 
   "modules-left": [
@@ -13,17 +13,24 @@
     "hyprland/submap"
   ],
   "modules-right": [
-    "custom/hyprv",
-    "custom/pacman",
     "backlight",
     "temperature",
-    "cpu",
-    "memory",
     "battery",
+    "custom/seperator-arrow-4",
+    "cpu",
+    "custom/seperator-thin-2",
+    "memory",
+    "custom/seperator-thin-2",
     "pulseaudio",
+    "custom/seperator-arrow-3",
     "idle_inhibitor",
+    "custom/seperator-thin-1",
+    "custom/hyprv",
+    "custom/seperator-arrow-2",
     "tray",
+    "custom/seperator-arrow-1",
     "clock",
+    "custom/seperator-slash-1",
     "custom/power"
   ],
 
@@ -150,6 +157,31 @@
     "signal": 8
   },
 
+  "custom/seperator-slash-1": {
+    "format": ""
+  },
+  "custom/seperator-slash-2": {
+    "format": ""
+  },
+  "custom/seperator-arrow-1": {
+    "format": ""
+  },
+  "custom/seperator-arrow-2": {
+    "format": ""
+  },
+  "custom/seperator-arrow-3": {
+    "format": ""
+  },
+  "custom/seperator-arrow-4": {
+    "format": ""
+  },
+  "custom/seperator-thin-1": {
+    "format": ""
+  },
+  "custom/seperator-thin-2": {
+    "format": ""
+  },
+
   "custom/power": {
     "format": "⏻",
     "on-click": "~/.config/hypr/scripts/wlogout.sh",
@@ -171,7 +203,7 @@
   "pulseaudio": {
     "scroll-step": 3, // %, can be a float
     "format": "{icon} {volume}% {format_source}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth": "{volume}% {icon}  {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": " {format_source}",
     //"format-source": "{volume}% ",

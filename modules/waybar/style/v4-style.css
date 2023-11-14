@@ -3,6 +3,8 @@
 @define-color accent @color4;
 @define-color background-transparent alpha(@background, 0);
 @define-color bg1 alpha(@background, 0.8);
+@define-color bg2 mix(@background, @color8, 0.2);
+@define-color bg3 mix(@background, @color8, 0.1);
 
 /* -----------------------------------------------------------------------------
  * Base styles
@@ -15,8 +17,8 @@
   border: 0;
   border-radius: 0;
   padding: 0 0;
-  font-family: Monaspace Neon;
-  font-size: 14px;
+  font-family: JetbrainsMono Nerd Font;
+  font-size: 15px;
   margin-right: 2px;
   margin-left: 2px;
   padding-bottom: 0px;
@@ -24,11 +26,14 @@
 
 window#waybar {
   background: @color0;
-  border-radius: 0px;
+  border-radius: 4px;
+  border: 1px solid;
+  border-color: @color8;
 }
 
 #workspaces button {
   padding: 0px 8px;
+  padding-top: 4px;
   border-bottom: 2px;
   color: @foreground;
   border-color: @color8;
@@ -74,11 +79,12 @@ window#waybar {
  * -------------------------------------------------------------------------- */
 
 #clock {
-  color: @foreground;
-  background-color: @background;
-  border-radius: 4px;
-  margin: 2px;
+  color: @background;
+  background-color: @color4;
   padding: 0px 8px;
+  margin: 1px 0px 1px 0px;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 #backlight {
@@ -112,10 +118,15 @@ window#waybar {
 
 #cpu {
   color: @foreground;
+  background-color: @background;
+  margin: 1px 0px 1px 0px;
+  padding-top: 4px;
 }
 
 #memory {
+  margin: 1px 0px 1px 0px;
   color: @foreground;
+  background-color: @background;
 }
 
 #network.disabled {
@@ -132,6 +143,8 @@ window#waybar {
 
 #pulseaudio {
   color: @foreground;
+  background-color: @background;
+  margin: 1px 0px 1px 0px;
 }
 
 #pulseaudio.muted {
@@ -146,14 +159,9 @@ window#waybar {
   color: @color1;
 }
 
-#idle_inhibitor {
-  color: @foreground;
-}
-
 #tray {
-  background-color: @background;
-  margin: 2px;
-  border-radius: 4px;
+  background-color: @bg2;
+  margin: 1px 0px 1px 0px;
 }
 
 #custom-launcher {
@@ -161,13 +169,11 @@ window#waybar {
 }
 #custom-power {
   background-color: @background;
-  border-radius: 4px;
-  margin: 2px;
   padding-right: 10px;
   padding-left: 8px;
   border-style: hidden;
-  margin-top: 2px;
-  color: @color1;
+  color: @color4;
+  margin: 1px 0px 1px 0px;
 }
 
 #window {
@@ -176,4 +182,69 @@ window#waybar {
 }
 #custom-network_traffic {
   color: @foreground;
+}
+
+#custom-hyprv,
+#idle_inhibitor {
+  background-color: @bg3;
+  margin: 1px 0px 1px 0px;
+  padding: 0px 4px;
+}
+
+#idle_inhibitor {
+  padding-left: 4px;
+  padding-right: 14px;
+}
+
+#custom-seperator-thin-1,
+#custom-seperator-thin-2,
+#custom-seperator-arrow-1,
+#custom-seperator-arrow-2,
+#custom-seperator-arrow-3,
+#custom-seperator-arrow-4,
+#custom-seperator-slash-1,
+#custom-seperator-slash-2 {
+  margin: 1px 0px 1px 0px;
+  font-size: 23px;
+}
+
+#custom-seperator-slash-1 {
+  background-color: @color4;
+  color: @background;
+}
+#custom-seperator-arrow-1 {
+  background-color: @bg2;
+  color: @color4;
+}
+
+#custom-seperator-arrow-2 {
+  background-color: @bg3;
+  color: @bg2;
+}
+
+#custom-seperator-arrow-3 {
+  background-color: @background;
+  color: @bg3;
+}
+
+#custom-seperator-arrow-4 {
+  background-color: @color0;
+  color: @background;
+}
+
+#custom-seperator-thin-1 {
+  background-color: @bg3;
+  color: @bg2;
+}
+
+#custom-seperator-thin-2 {
+  background-color: @background;
+  color: @bg3;
+}
+
+#memory,
+#pulseaudio,
+#idle_inhibitor,
+#custom-hyprv {
+  padding-top: 2px;
 }
