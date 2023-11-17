@@ -3,7 +3,7 @@
   "position": "top", // Waybar position (top|bottom|left|right)
   "height": 30,
   //"width":1900,
-  "margin": "4 4 4 4",
+  "margin": "4 4 0 4",
   "spacing": 0,
 
   "modules-left": [
@@ -29,9 +29,7 @@
     "custom/seperator-arrow-2",
     "tray",
     "custom/seperator-arrow-1",
-    "clock",
-    "custom/seperator-slash-1",
-    "custom/power"
+    "clock"
   ],
 
   // Modules configuration
@@ -90,7 +88,7 @@
   },
 
   "cpu": {
-    "format": "🖳{usage}%",
+    "format": "🖳 {usage}%",
     "on-click": "alacritty -e htop"
   },
 

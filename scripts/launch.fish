@@ -44,7 +44,7 @@ switch $arg
         rofi -show drun
 
     case terminal1
-        kitty
+        footclient
     case terminal2
         alacritty
 

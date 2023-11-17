@@ -2,7 +2,7 @@
 
 @define-color accent @color4;
 @define-color background-transparent alpha(@background, 0);
-@define-color bg1 alpha(@background, 0.8);
+@define-color bg1 mix(@background, @color8, 0.3);
 @define-color bg2 mix(@background, @color8, 0.2);
 @define-color bg3 mix(@background, @color8, 0.1);
 
@@ -19,8 +19,6 @@
   padding: 0 0;
   font-family: JetbrainsMono Nerd Font;
   font-size: 15px;
-  margin-right: 2px;
-  margin-left: 2px;
   padding-bottom: 0px;
 }
 
@@ -28,7 +26,8 @@ window#waybar {
   background: @color0;
   border-radius: 4px;
   border: 1px solid;
-  border-color: @color8;
+  border-color: @bg3;
+  padding: 0px;
 }
 
 #workspaces button {
@@ -39,16 +38,25 @@ window#waybar {
   border-color: @color8;
   border-style: solid;
   /* margin-top: 2px; */
+  margin: 1px 2px 0px 2px;
 }
 
 #workspaces button.urgent {
-  border-color: @accent;
-  background: @color1;
+  border-color: @color1;
+  background: @background;
+  color: @background;
+}
+#workspaces button.urgent * {
+  color: @color1;
 }
 
 #workspaces button.active {
   border-color: @accent;
-  background: @color8;
+  background: @bg2;
+}
+
+#workspaces button:last-child {
+  margin-right: 8px;
 }
 
 #clock,
@@ -79,12 +87,13 @@ window#waybar {
  * -------------------------------------------------------------------------- */
 
 #clock {
-  color: @background;
-  background-color: @color4;
+  color: @color4;
+  background-color: @bg1;
   padding: 0px 8px;
   margin: 1px 0px 1px 0px;
   font-weight: bold;
   font-size: 16px;
+  border-radius: 0px 4px 4px 0px;
 }
 
 #backlight {
@@ -166,20 +175,26 @@ window#waybar {
 
 #custom-launcher {
   border-style: hidden;
+  padding-left: 8px;
+  padding-right: 12px;
+  margin-right: 2px;
 }
 #custom-power {
-  background-color: @background;
+  background-color: @color4;
   padding-right: 10px;
   padding-left: 8px;
   border-style: hidden;
-  color: @color4;
+  border-radius: 0px 4px 4px 0px;
+  color: @color0;
   margin: 1px 0px 1px 0px;
 }
 
 #window {
   border-style: hidden;
   margin-top: 1px;
+  margin-left: 2px;
 }
+
 #custom-network_traffic {
   color: @foreground;
 }
@@ -209,12 +224,12 @@ window#waybar {
 }
 
 #custom-seperator-slash-1 {
-  background-color: @color4;
-  color: @background;
+  background-color: @bg1;
+  color: @color4;
 }
 #custom-seperator-arrow-1 {
   background-color: @bg2;
-  color: @color4;
+  color: @bg1;
 }
 
 #custom-seperator-arrow-2 {
