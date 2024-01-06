@@ -36,17 +36,17 @@ switch $arg
         end
 
     case code
-        code --password-store="gnome" \
-            --ozone-platform=wayland \
-            --enable-features=UseOzonePlatform,WaylandWindowDecorations,WebRTCPipeWireCapturer
-
+        code
+        # code --password-store="gnome"
+        # --ozone-platform=wayland \
+        # --enable-features=UseOzonePlatform,WaylandWindowDecorations,WebRTCPipeWireCapturer
     case rofi
         rofi -show drun
 
     case terminal1
-        footclient
-    case terminal2
         alacritty
+    case terminal2
+        footclient
 
     case zellij
         if test ( zellij ls | rg main )
@@ -61,7 +61,7 @@ switch $arg
     case neovim
         kitty --detach --hold -e nvim
     case neovide
-        neovide --multigrid
+        neovide
 
     case lunarvim
         kitty --detach --hold -e lvim
