@@ -1,7 +1,7 @@
 #!/bin/bash
 
 get_ver() {
-	VER=$(readlink -f ~/.config/waybar/config | cut -d '-' -f1 | cut -d '/' -f9)
+	VER=$(readlink -f ~/.config/waybar/config.jsonc | cut -d '-' -f1 | cut -d '/' -f9)
 }
 
 restart_waybar() {
@@ -40,7 +40,7 @@ switch_version() {
 
 	esac
 	#set the waybar config
-	ln -sf ~/.config/hypr/modules/waybar/conf/$VERTO'config.jsonc' ~/.config/waybar/config
+	ln -sf ~/.config/hypr/modules/waybar/conf/$VERTO'config.jsonc' ~/.config/waybar/config.jsonc
 	#set the waybar theme
 	ln -sf ~/.config/hypr/modules/waybar/style/$VERTO'style'.css ~/.config/waybar/style.css
 
