@@ -7,6 +7,12 @@ end
 
 set arg $argv[1]
 
+# defaults
+set browser $BROWSER
+set terminal alacritty
+set editor $EDITOR
+set files $FILEMANAGER
+
 
 function isRunning
     set appName $argv[1]
@@ -27,22 +33,32 @@ function getWorkspaceId
     end
 end
 
+function run_electron
+    if test $XDG_SESSION_TYPE = wayland
+        $argv[1] --ozone-platform=wayland --enable-features=UseOzonePlatform,WaylandWindowDecorations,WebRTCPipeWireCapturer
+    else
+        $argv[1]
+    end
+end
+
 switch $arg
     case browser
-        if !isRunning firefox
-            firefox
-        else
+        if isRunning firefox
             hyprctl dispatch workspace (getWorkspaceId "firefox")
+        else
+            firefox
         end
 
     case code
-        code
-        # code --password-store="gnome"
-        # --ozone-platform=wayland \
-        # --enable-features=UseOzonePlatform,WaylandWindowDecorations,WebRTCPipeWireCapturer
+        code \
+            --ozone-platform=wayland \
+            --enable-features=UseOzonePlatform,WaylandWindowDecorations,WebRTCPipeWireCapturer
+
     case rofi
         rofi -show drun
 
+    case terminal
+        alacritty
     case terminal1
         alacritty
     case terminal2
@@ -50,39 +66,47 @@ switch $arg
 
     case zellij
         if test ( zellij ls | rg main )
-            kitty -e --detach --hold zellij a main
+            $terminal -e --hold zellij a main &
         else
-            kitty -e --detach --hold zellij -s main -l main
+            $terminal -e --hold zellij -s main -l main &
         end
-        # kitty -e --detach --hold zellij $command
+        # kitty -e --detach --hold zellij $command &
     case tmux
-        kitty --detach -T tmux -e ~/.config/hypr/scripts/tmux_session.fish
+        $terminal -T tmux -e ~/.config/hypr/scripts/tmux_session.fish &
 
-    case neovim
-        kitty --detach --hold -e nvim
+    case nvim
+        $terminal --hold -e nvim &
     case neovide
         neovide
 
     case lunarvim
-        kitty --detach --hold -e lvim
+        $terminal --hold -e lvim &
     case lunarvide
         neovide --neovim-bin ~/.local/bin/lvim --multigrid
 
-    case graphicalFiles
-        nemo
+    case filesgui
+        $files
 
-    case files
-        kitty --detach -e ranger
+    case filestui
+        $terminal -e ranger &
 
     case clipboard
         cliphist list | rofi -dmenu | cliphist decode | wl-copy
 
     case spotify
-        spotify
+        run_electron spotify
 
     case spt
         spotifyd
-        kitty --detach -e spt
-        kitty --detach -e cava
+        $terminal -e spt &
+        $terminal -e cava &
 
+    case passwords
+        run_electron bitwarden-desktop &
+
+    case http
+        run_electron insomnia &
+
+    case insomnia
+        run_electron insomnia &
 end
