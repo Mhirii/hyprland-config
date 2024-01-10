@@ -1,4 +1,4 @@
 #!/bin/fish
 
 
-firefox --new-tab "github.com/"(wl-paste)
+$BROWSER --new-tab "github.com/"(wl-paste)

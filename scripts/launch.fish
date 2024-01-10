@@ -29,10 +29,10 @@ end
 
 switch $arg
     case browser
-        if isRunning firedragon
-            hyprctl dispatch workspace (getWorkspaceId "firedragon")
+        if isRunning $BROWSER
+            hyprctl dispatch workspace (getWorkspaceId "$BROWSER")
         else
-            firedragon
+            $BROWSER
         end
 
     case code
